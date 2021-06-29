@@ -1,0 +1,35 @@
+name: 'Release components'
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  release-components:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Install dependencies
+        run: |
+          npm install --force
+          npm install react react-dom styled-components prop-types --save
+      - name: Build components
+        run: |
+          npm run build
+      - name: Chromatic
+        run: |
+          npm install --save-dev chromatic
+          npx chromatic --project-token=${{ secrets.CHROMATIC_TOKEN }}
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 14
+          registry-url: https://registry.npmjs.org/
+      - run: git config --global user.email ${{ secrets.GIT_EMAIL }}
+      - run: git config --global user.name ${{ secrets.GIT_NAME }}
+      - run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

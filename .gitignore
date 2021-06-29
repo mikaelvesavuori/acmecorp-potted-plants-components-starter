@@ -1,0 +1,11 @@
+*.lock
+.env
+.env.*
+.figmagicrc
+/.figmagic
+dist/
+node_modules/
+.vscode/
+.yarn/
+storybook-static/
+build-storybook.log

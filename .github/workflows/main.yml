@@ -1,0 +1,26 @@
+name: 'Build components'
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-components:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Install dependencies
+        run: |
+          npm install --force
+          npm install react react-dom styled-components prop-types --save
+      - name: Build components
+        run: |
+          npm run build
+      - name: Chromatic
+        run: |
+          npm install --save-dev chromatic
+          npx chromatic --project-token=${{ secrets.CHROMATIC_TOKEN }}
