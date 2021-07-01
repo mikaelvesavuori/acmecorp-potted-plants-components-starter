@@ -1,4 +1,6 @@
-# ACME Corp. Potted Plants - Component Library
+# ACME Corp. Potted Plants - Component Library (Starter)
+
+**This is the starter package that recreates the [final result](https://github.com/mikaelvesavuori/acmecorp-potted-plants-components)**.
 
 React component library with components generated and/or composed with Figmagic. Made for [The newline Guide to React Component Design Systems with Figmagic](https://www.newline.co/courses/newline-guide-to-react-component-design-systems-with-figmagic/).
 

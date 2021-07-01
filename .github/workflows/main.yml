@@ -20,7 +20,7 @@ jobs:
       - name: Build components
         run: |
           npm run build
-      - name: Chromatic
-        run: |
-          npm install --save-dev chromatic
-          npx chromatic --project-token=${{ secrets.CHROMATIC_TOKEN }}
+      #- name: Chromatic
+      #  run: |
+      #    npm install --save-dev chromatic
+      #    npx chromatic --project-token=${{ secrets.CHROMATIC_TOKEN }}
