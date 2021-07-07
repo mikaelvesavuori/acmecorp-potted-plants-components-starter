@@ -31,12 +31,12 @@ jobs:
       #    projectToken: ${{ secrets.CHROMATIC_TOKEN }}
       #    exitZeroOnChanges: true
       #    exitOnceUploaded: true
-      - name: Publish to Chromatic
-        if: github.ref == 'refs/heads/main'
-        uses: chromaui/action@v1
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          projectToken: ${{ secrets.CHROMATIC_TOKEN }}
-          autoAcceptChanges: true
-          exitZeroOnChanges: true
-          exitOnceUploaded: true
+      #- name: Publish to Chromatic
+      #  if: github.ref == 'refs/heads/main'
+      #  uses: chromaui/action@v1
+      #  with:
+      #    token: ${{ secrets.GITHUB_TOKEN }}
+      #    projectToken: ${{ secrets.CHROMATIC_TOKEN }}
+      #    autoAcceptChanges: true
+      #    exitZeroOnChanges: true
+      #    exitOnceUploaded: true
