@@ -19,11 +19,13 @@ jobs:
           npm install react react-dom styled-components prop-types --save
       - name: Build components
         run: |
+          npx figmagic --token ${{ secrets.FIGMA_TOKEN }} --url ${{ secrets.FIGMA_URL }}
           npm run build
-      - name: Chromatic
-        run: |
-          npm install --save-dev chromatic
-          npx chromatic --project-token=${{ secrets.CHROMATIC_TOKEN }}
+      #- name: Publish to Chromatic
+      #  uses: chromaui/action@v1
+      #  with:
+      #    token: ${{ secrets.GITHUB_TOKEN }}
+      #    projectToken: ${{ secrets.CHROMATIC_TOKEN }}
       - uses: actions/setup-node@v1
         with:
           node-version: 14

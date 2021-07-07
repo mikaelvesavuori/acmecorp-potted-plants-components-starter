@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - "feature/*"
 
 jobs:
   build-components:
@@ -19,8 +20,23 @@ jobs:
           npm install react react-dom styled-components prop-types --save
       - name: Build components
         run: |
+          npx figmagic --token ${{ secrets.FIGMA_TOKEN }} --url ${{ secrets.FIGMA_URL }}
           npm run build
-      #- name: Chromatic
-      #  run: |
-      #    npm install --save-dev chromatic
-      #    npx chromatic --project-token=${{ secrets.CHROMATIC_TOKEN }}
+      # See: https://www.chromatic.com/docs/github-actions
+      #- name: Publish to Chromatic
+      #  if: github.ref != 'refs/heads/main'
+      #  uses: chromaui/action@v1
+      #  with:
+      #    token: ${{ secrets.GITHUB_TOKEN }}
+      #    projectToken: ${{ secrets.CHROMATIC_TOKEN }}
+      #    exitZeroOnChanges: true
+      #    exitOnceUploaded: true
+      - name: Publish to Chromatic
+        if: github.ref == 'refs/heads/main'
+        uses: chromaui/action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          projectToken: ${{ secrets.CHROMATIC_TOKEN }}
+          autoAcceptChanges: true
+          exitZeroOnChanges: true
+          exitOnceUploaded: true
