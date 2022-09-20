@@ -1,6 +1,6 @@
 {
   "name": "acmecorp-potted-plants-components-starter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React component library with components generated and/or composed with Figmagic. Made for The newline Guide to React Component Design Systems with Figmagic.",
   "keywords": [
     "acmecorp",
@@ -15,7 +15,7 @@
   "scripts": {
     "clean": "rm -rf dist",
     "build": "npm run clean && npx webpack",
-    "init": "npx sb init -f && npm install --force",
+    "init": "npx sb init -f && npm install --force && rm -rf src/stories",
     "prepublishOnly": "npm run figmagic && npm run build",
     "figmagic:init": "npx figmagic init",
     "figmagic": "npx figmagic",
@@ -24,34 +24,40 @@
     "storybook": "start-storybook -p 6006"
   },
   "resolutions": {
-    "react": "17"
+    "@storybook/{app}/webpack": "^5"
   },
   "peerDependencies": {
     "prop-types": "latest",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
+    "react": "18",
+    "react-dom": "18",
     "styled-components": "5"
   },
   "devDependencies": {
-    "@babel/core": "7.17.8",
-    "@babel/preset-env": "7.16.11",
-    "@babel/preset-react": "7.16.7",
-    "@storybook/addon-actions": "^6.4.19",
-    "@storybook/addon-essentials": "^6.4.19",
-    "@storybook/addon-interactions": "^6.4.19",
-    "@storybook/addon-links": "^6.4.19",
-    "@storybook/react": "^6.4.19",
-    "@storybook/testing-library": "^0.0.9",
-    "babel-loader": "8.2.4",
-    "babel-plugin-module-resolver": "4.1.0",
+    "@babel/core": "7",
+    "@babel/preset-env": "7",
+    "@babel/preset-react": "7",
+    "@storybook/addon-actions": "^6.5.12",
+    "@storybook/addon-essentials": "^6.5.12",
+    "@storybook/addon-interactions": "^6.5.12",
+    "@storybook/addon-links": "^6.5.12",
+    "@storybook/builder-webpack4": "^6.5.12",
+    "@storybook/builder-webpack5": "^6.5.12",
+    "@storybook/manager-webpack4": "^6.5.12",
+    "@storybook/manager-webpack5": "^6.5.12",
+    "@storybook/react": "^6.5.12",
+    "@storybook/testing-library": "^0.0.13",
+    "babel-loader": "8",
+    "babel-plugin-module-resolver": "4",
     "chromatic": "5",
-    "eslint": "8.11.0",
+    "eslint": "8",
     "eslint-plugin-storybook": "^0.5.7",
     "figmagic": "4",
-    "file-loader": "6.2.0",
-    "prettier": "2.6.0",
-    "webpack": "4",
-    "webpack-cli": "4.9.2",
+    "file-loader": "6",
+    "prettier": "2",
+    "react": "18",
+    "react-dom": "18",
+    "webpack": "5",
+    "webpack-cli": "4",
     "webpack-dev-server": "3"
   }
 }
