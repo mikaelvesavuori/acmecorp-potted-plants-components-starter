@@ -1,6 +1,5 @@
 {
   "syncElements": true,
-  "syncGraphics": true,
   "outputGraphicElements": true,
   "outputFolderGraphics": "src/graphics",
   "outputFolderElements": "src/elements",
