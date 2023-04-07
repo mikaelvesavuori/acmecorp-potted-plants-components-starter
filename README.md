@@ -19,7 +19,6 @@ In the context of the course, it's meant to be used with our [example applicatio
 ## Instructions
 
 - Initialize the project with `npm run init`, which will:
-  - Install Storybook with `npx sb init -f`
   - Install dependencies with `npm install --force` (important, as regular install will not work correctly)
 - Run Storybook with `npm start`
 - Create a `.env` file that contains values for `FIGMA_URL`, `FIGMA_TOKEN` and `CHROMATIC_TOKEN`
