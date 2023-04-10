@@ -27,7 +27,7 @@
     "@storybook/{app}/webpack": "^5"
   },
   "peerDependencies": {
-    "prop-types": "latest",
+    "prop-types": "15",
     "react": "17",
     "react-dom": "17",
     "styled-components": "5"
@@ -40,13 +40,13 @@
     "@storybook/addon-essentials": "6.5.12",
     "@storybook/addon-interactions": "6.5.12",
     "@storybook/addon-links": "6.5.12",
-    "@storybook/blocks": "^7.0.2",
+    "@storybook/blocks": "7",
     "@storybook/builder-webpack4": "6.5.12",
     "@storybook/builder-webpack5": "6.5.12",
     "@storybook/manager-webpack4": "6.5.12",
     "@storybook/manager-webpack5": "6.5.12",
     "@storybook/react": "6.5.12",
-    "@storybook/react-webpack5": "^7.0.2",
+    "@storybook/react-webpack5": "7",
     "@storybook/testing-library": "0.0.13",
     "babel-loader": "9",
     "babel-plugin-module-resolver": "4",
@@ -56,10 +56,10 @@
     "figmagic": "4",
     "file-loader": "6",
     "prettier": "2",
-    "prop-types": "^15.8.1",
+    "prop-types": "15",
     "react": "17",
     "react-dom": "17",
-    "storybook": "^7.0.2",
+    "storybook": "7",
     "webpack": "5",
     "webpack-cli": "4",
     "webpack-dev-server": "3"
